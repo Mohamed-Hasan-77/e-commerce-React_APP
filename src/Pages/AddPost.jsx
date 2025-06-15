@@ -24,7 +24,6 @@ export default function AddPost() {
   const formHandler = async (e) => {
     e.preventDefault();
 
-   
     if (!formData.title || !formData.description || !formData.image) {
       toast.error('Please fill in all fields!');
       return;
