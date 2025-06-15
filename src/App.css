@@ -1,0 +1,48 @@
+@import "tailwindcss";
+@plugin "daisyui";
+
+@custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
+
+@theme {
+  --color-mint-500: oklch(0.72 0.11 178);
+  --container-width-sm: 100%;
+  --container-width-md: 728px;
+  --container-width-lg: 900px;
+  --container-width-xl: 1024px;
+  --container-width-2xl: 1140px;
+
+}
+
+.container {
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  width: 100%;
+}
+
+@media (min-width: 640px) {
+  .container {
+    max-width: var(--container-width-sm);
+  }
+}
+@media (min-width: 768px) {
+  .container {
+    max-width: var(--container-width-md);
+  }
+}
+@media (min-width: 1024px) {
+  .container {
+    max-width: var(--container-width-lg);
+  }
+}
+@media (min-width: 1280px) {
+  .container {
+    max-width: var(--container-width-xl);
+  }
+}
+@media (min-width: 1536px) {
+  .container {
+    max-width: var(--container-width-2xl);
+  }
+}
