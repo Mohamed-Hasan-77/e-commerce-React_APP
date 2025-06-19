@@ -50,7 +50,7 @@ const formHandler = async (e) => {
 
     // Send form data to the server
     try {
-      const {data} = await axios.post(`http://localhost:3000/products`, formData)
+      const {data} = await axios.post(`https://json-server-backend-production-7fc9.up.railway.app/cars`, formData)
       toast.success('Product Added Successfully !');
       setTimeout(() => {
         navigate("/admin")

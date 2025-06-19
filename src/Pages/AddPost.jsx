@@ -36,7 +36,7 @@ export default function AddPost() {
     };
 
     try {
-      await axios.post("http://localhost:3000/posts", postData);
+      await axios.post("https://json-server-backend-production-7fc9.up.railway.app/posts", postData);
 
       toast.success("Post Added Successfully!");
 

@@ -24,7 +24,7 @@ export default function Login() {
 
         try {
 
-        const { data: users } = await axios.get("http://localhost:3000/users");
+        const { data: users } = await axios.get("https://json-server-backend-production-7fc9.up.railway.app/users");
         const matchedUser = users.find((user) =>
         user.email === loginData.email && user.password === loginData.password
         );

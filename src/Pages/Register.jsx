@@ -23,7 +23,7 @@ export default function Register() {
     e.preventDefault();
 
     try {
-        await axios.post("http://localhost:3000/users", user);
+        await axios.post("https://json-server-backend-production-7fc9.up.railway.app/users", user);
         login(user);
         toast.success('Register Successfull ');
                 setTimeout(() => {

@@ -9,7 +9,7 @@ export default function Navbar() {
   const {products} = useProductContext();
   const { user, logout } = useAuth();
 
-  const numberOfProductsInCart = products.filter((product) => product.isInCart).length;
+  const numberOfProductsInCart = products?.filter((product) => product.isInCart).length;
 
 
   return (

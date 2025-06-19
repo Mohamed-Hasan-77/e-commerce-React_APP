@@ -9,7 +9,7 @@ export default function Blog() {
 
 
   function getPosts() {
-    axios.get("http://localhost:3000/posts")
+    axios.get("https://json-server-backend-production-7fc9.up.railway.app/posts")
       .then(res => setPosts(res.data))
       .catch(err => {
         console.error(err);
@@ -19,7 +19,7 @@ export default function Blog() {
 
   const handleDelete = async (id) => {
     try {
-      await axios.delete(`http://localhost:3000/posts/${id}`);
+      await axios.delete(`https://json-server-backend-production-7fc9.up.railway.app/posts/${id}`);
       setPosts(posts.filter(p => p.id !== id));
       toast.success("Post deleted");
     } catch (error) {
@@ -34,13 +34,13 @@ export default function Blog() {
 
   return (
     <div className="container mx-auto p-5 min-h-screen">
-      <h1 className="text-4xl font-bold text-center mb-6">Blog Posts</h1>
+      <h1 className="text-4xl font-bold text-center mb-6">Blog </h1>
 
-      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div className="grid md:grid-col-1 gap-6">
         {posts.map(post => (
           <div key={post.id} className="card bg-base-100 shadow-xl">
             <figure>
-              <img src={post.image} alt={post.title} className="h-52 w-full object-cover"/>
+              <img src={post.image} alt={post.title} className="h-96 w-full object-cover"/>
             </figure>
             <div className="card-body">
               <h2 className="card-title">{post.title}</h2>

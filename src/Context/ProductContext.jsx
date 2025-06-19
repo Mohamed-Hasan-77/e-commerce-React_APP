@@ -14,7 +14,7 @@ export const ProductProvider = ({ children }) => {
   // Fetching data
   const getAllProducts = async () => {
     try {
-      const { data } = await axios.get("http://localhost:3000/cars");
+      const { data } = await axios.get("https://json-server-backend-production-7fc9.up.railway.app/cars");
       setProducts(data);
     } catch (error) {
       console.error("Error fetching products:", error);
@@ -24,7 +24,7 @@ export const ProductProvider = ({ children }) => {
   // Fetching categories
   const getAllCategories = async () => {
     try {
-      const { data } = await axios.get("http://localhost:3000/categories");
+      const { data } = await axios.get("https://json-server-backend-production-7fc9.up.railway.app/categories");
       setCategories(data);
     } catch (error) {
       console.error("Error fetching categories:", error);
@@ -39,7 +39,7 @@ export const ProductProvider = ({ children }) => {
 
   //  handlers
 
-    // Decrement product count 
+  // Decrement product count 
   const increment = (product) => {
     const newProducts = [...products];
     const index = newProducts.findIndex((p) => p.id === product.id);
@@ -120,6 +120,7 @@ export const ProductProvider = ({ children }) => {
   const totalPages = Math.ceil(filteredProducts.length / pageSize);
   const pagesArr = Array.from({ length: totalPages }, (_, i) => i + 1);
   filteredProducts = filteredProducts.slice(start, end);
+
 
   return (
     <ProductContext.Provider
